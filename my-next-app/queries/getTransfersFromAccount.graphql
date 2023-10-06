@@ -1,5 +1,5 @@
-{
-  account(id: "gdqsqcgxzgprf23mmttdvfiwhyakaj5f53r3r23ucxsxfidnjnhqvbgx") {
+query GetAccountDetails($accountId: String!){
+  account(id: $accountId) {
     id
     firstSeenLedger
     sentTransfers {
