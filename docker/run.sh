@@ -11,6 +11,10 @@ versionTag=18
 # Display the command being executed
 echo "Command: $1"
 
+echo "Creating subquery_sandbox_default docker network"
+  docker network create subquery_sandbox_default
+
+
 # Check if there is a previous Docker container with the same name
 echo "Searching for a previous docker container"
 containerID=$(docker ps --filter="name=${containerName}" --all --quiet)

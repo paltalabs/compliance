@@ -4,23 +4,24 @@ If running local, use subquery_sandbox
 
 ## start
  
- Set environment variables:
- ```
- cp .env.example .env
- ```
- 
- go to docker and then:
-
+1. Set environment variables:
 ```
+cp .env.example .env
+```
+ 
+2. Go to docker container
+```
+cd docker
 bash run.sh
 ```
 
-then 
+3. Open my-next-app folder and install packages
 ```
 cd my-next-app
+yarn
 ```
 
-then
+4. Serve the next app in development mode
 ```
 yarn dev
 ```
