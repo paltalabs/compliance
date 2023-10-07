@@ -1,0 +1,11 @@
+FROM node:18
+
+WORKDIR /app
+
+COPY my-next-app/package.json /app/
+
+RUN npm install
+
+COPY my-next-app/ /app/
+
+CMD ["npm", "run", "dev"]
