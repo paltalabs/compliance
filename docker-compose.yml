@@ -18,5 +18,5 @@ services:
 
 networks:
   graphql-engine-network:
-    external:
-      name: compliance_kwickbit_paltalabs_network
+    name: compliance_kwickbit_paltalabs_network
+    external: true
