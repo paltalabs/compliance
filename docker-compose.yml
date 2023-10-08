@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  my-next-app:
+    container_name: compliance_my_next_app_container
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.dev
+    environment:
+      - NEXT_APP_GRAPHQL_ENDPOINT=http://graphql-engine:3000/graphql
+    networks:
+      - graphql-engine-network
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./my-next-app:/app
+      - /app/node_modules
+
+networks:
+  graphql-engine-network:
+    external:
+      name: compliance_kwickbit_paltalabs_network
