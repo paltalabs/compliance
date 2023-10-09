@@ -3,9 +3,18 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import fetch from 'node-fetch';
+import path from 'path';
 
 // Read the .graphql file
-const graphqlQuery: string = fs.readFileSync('queries/getTransfersFromAccount.graphql', 'utf-8').toString();
+// const graphqlQuery: string = fs.readFileSync('queries/getTransfersFromAccount.graphql', 'utf-8').toString();
+const isProd = process.env.NODE_ENV === 'production';
+const filePath = isProd
+    ? path.join(process.cwd(), './queries/getTransfersFromAccount.graphql')
+    : 'queries/getTransfersFromAccount.graphql';
+
+const graphqlQuery: string = fs.readFileSync(filePath, 'utf-8').toString();
+
+
 // Define the GraphQL endpoint
 const GRAPHQL_ENDPOINT: string = process.env.NEXT_APP_GRAPHQL_ENDPOINT ?? "";
 
