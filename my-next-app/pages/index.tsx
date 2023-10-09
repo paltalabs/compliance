@@ -103,7 +103,9 @@ const LandingPage: React.FC = () => {
     }
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
-            <h1>Welcome to Our Compliance Checker</h1>
+            <h1>Welcome to Our Compliance Helper</h1>
+            <div> You may want to try with the following address</div>
+            <div> gc4tavxbv4cffjgrrks76bbiw6zrti6tyfwhbkp53t5r3xsueamtfwsx</div>
             <input
                 type="text"
                 placeholder="Paste your address"
