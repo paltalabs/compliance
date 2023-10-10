@@ -5,6 +5,8 @@ WORKDIR /app
 
 COPY my-next-app/package.json my-next-app/package-lock.json* /app/
 
+ENV NEXT_APP_GRAPHQL_ENDPOINT=please_set_at_runtime
+
 # Install the dependencies and pm2 globally
 RUN npm install && npm install -g pm2
 
